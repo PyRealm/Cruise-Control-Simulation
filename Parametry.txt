@@ -1,0 +1,20 @@
+# Parametry Opel Corsa D GSI 2009 1.6L 110kW
+M = 1560  # masa [kg]
+A = 2.583  # powierzchnia czołowa [m^2]
+Fmax = 5165  # maksymalna siła napędowa [N]
+Cd = 0.3  # współczynnik oporu aerodynamicznego
+kp = 0.7
+
+# Parametry Porsche 911 992 Carrera Facelifting 3.0L 290kW
+M = 1600
+A = 2.403
+Fmax = 13200
+Cd = 0.1
+kp = 0.4
+
+# Parametry Mercedes Actros L 2024 15.6L 460kW
+M = 8206
+A = 5.635
+Fmax = 16550
+Cd = 5
+kp = 0.3
