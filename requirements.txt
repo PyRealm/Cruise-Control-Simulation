@@ -1,0 +1,5 @@
+Flask
+matplotlib
+numpy
+plotly
+kaleido

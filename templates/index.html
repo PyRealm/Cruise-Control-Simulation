@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Symulacja Tempomatu</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+  <h1>Symulacja Tempomatu</h1>
+  <form method="POST">
+    <div class="slider-wrapper">
+      <div class="slider-container">
+        <label for="v0">Prędkość początkowa [km/h]:</label>
+        <input type="range" name="v0" min="0" max="140" step="20" value="{{ v0|default(0) }}" oninput="v0_out.value = this.value">
+        <output name="v0_out" class="slider-value">{{ v0|default(0) }}</output>
+      </div>
+
+      <div class="slider-container">
+        <label for="Tp">Okres próbkowania Tp [s]:</label>
+        <input type="range" name="Tp" min="0.25" max="2.5" step="0.25" value="{{ Tp|default(0.5) }}" oninput="Tp_out.value = this.value">
+        <output name="Tp_out" class="slider-value">{{ Tp|default(0.5) }}</output>
+      </div>
+      
+      <div class="slider-container">
+        <label for="v_set">Prędkość docelowa [km/h]:</label>
+        <input type="range" name="v_set" min="0" max="140" step="20" value="{{ v_set|default(80) }}" oninput="v_set_out.value = this.value">
+        <output name="v_set_out" class="slider-value">{{ v_set|default(80) }}</output>
+      </div>
+
+      <div class="slider-container">
+        <label for="Ti">Czas zdwojenia Ti [s]:</label>
+        <input type="range" name="Ti" min="0.25" max="2.5" step="0.25" value="{{ Ti|default(1.0) }}" oninput="Ti_out.value = this.value">
+        <output name="Ti_out" class="slider-value">{{ Ti|default(1.0) }}</output>
+      </div>
+
+      <div class="slider-container">
+        <label for="theta">Kąt nachylenia [°]:</label>
+        <input type="range" name="theta" min="-30" max="30" step="6" value="{{ theta|default(15) }}" oninput="theta_out.value = this.value">
+        <output name="theta_out" class="slider-value">{{ theta|default(15) }}</output>
+      </div>
+
+      <div class="slider-container">
+        <label for="Td">Czas wyprzedzenia Td [s]:</label>
+        <input type="range" name="Td" min="0" max="1.5" step="0.25" value="{{ Td|default(0.5) }}" oninput="Td_out.value = this.value">
+        <output name="Td_out" class="slider-value">{{ Td|default(0.5) }}</output>
+      </div>
+    </div>
+
+    <div class="controls-container">
+      <div class="slider-container">
+        <label for="kp">Wzmocnienie regulatora kp [-]:</label>
+        <input type="range" name="kp" min="0.1" max="1" step="0.1" value="{{ kp|default(0.4) }}" oninput="kp_out.value = this.value">
+        <output name="kp_out" class="slider-value">{{ kp|default(0.4) }}</output>
+      </div>
+
+      <div class="buttons-section">
+        <div class="top-buttons">
+          <button type="button" value="sport" 
+            onclick="setActive(this)" 
+            class="car-button {{ 'active' if car_type == 'sport' else '' }}">
+            Audi TT 8S RS
+          </button>
+          <button type="button" value="personal" 
+            onclick="setActive(this)" 
+            class="car-button {{ 'active' if car_type == 'personal' else '' }}">
+            Opel Corsa D
+          </button>
+        </div>
+        <div class="bottom-buttons">
+          <button type="button" value="truck" 
+            onclick="setActive(this)" 
+            class="car-button {{ 'active' if car_type == 'truck' else '' }}">
+            Mercedes Actros L
+          </button>
+          <button type="submit">Generuj wykresy</button>
+        </div>
+      </div>
+    </div>
+
+    <input type="hidden" id="car_type" name="car_type" value="{{ car_type|default('personal') }}">
+  </form>
+
+  {% if plot_html %}
+  <div>
+    {{ plot_html|safe }}
+  </div>
+  {% endif %}
+</body>
+</html>

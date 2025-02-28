@@ -1,0 +1,218 @@
+/* Resetowanie marginesów i paddingów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Ogólny styl dla strony */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 20px;
+    line-height: 1.6;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-top: 30px;
+    color: #333;
+  }
+  
+  form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Układ siatki dla sliderów i przycisków */
+  .slider-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dwie kolumny */
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  .slider-container label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .slider-container input[type="range"] {
+    /*width: 100%;*/
+    width: 800px;
+    height: 12px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #007bff, #00d4ff);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: background 0.3s ease;
+  }
+  
+  .slider-container input[type="range"]::-webkit-slider-runnable-track {
+    height: 12px;
+    border-radius: 10px;
+  }
+  
+  /* Stylowanie uchwytu (thumb) suwaka */
+  .slider-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #007bff;
+    border: 3px solid #00d4ff;
+    cursor: pointer;
+    margin-top: -6px;
+    transition: background 0.3s ease;
+  }
+  
+  .slider-container input[type="range"]:hover::-webkit-slider-thumb {
+    background: #00d4ff;
+  }
+  
+  .slider-container input[type="range"]:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .slider-value {
+    font-size: 14px;
+    color: black;
+    margin-top: 8px;
+    text-align: center;
+  }
+  
+  .controls-container {
+    position: relative;
+    left: 50px;
+  }
+  
+  .buttons-section {
+    position: relative;
+    left: 280px; /* Przesunięcie o 100px w lewo */
+  }
+  
+  .car-type-buttons {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .bottom-buttons {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .controls-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .slider-section {
+    flex: 1;
+  }
+  
+  .buttons-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .top-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .bottom-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .car-button {
+    border: 2px solid #007bff;
+    background-color: #f8f9fa;
+    color: #007bff;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    min-width: 200px;
+    height: 40px;
+  }
+  
+  .car-button:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .car-button.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .bottom-buttons button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 200px;
+    height: 40px;
+    position: relative;
+    left: 10px;
+  }
+  
+  .bottom-buttons button[type="submit"]:hover {
+    background-color: #218838;
+  }
+  
+  @media (max-width: 768px) {
+    .slider-wrapper {
+      grid-template-columns: 1fr;  /* Pojedyncza kolumna na małych ekranach */
+    }
+  
+    .car-type-buttons {
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%; /* Przyciski zajmują całą szerokość ekranu na małych ekranach */
+    }
+  
+    .car-type-buttons button {
+      margin-bottom: 10px;
+    }
+  }
+  
