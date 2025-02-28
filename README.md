@@ -17,4 +17,5 @@ Projekt symulacji tempomatu wykonany przy użyciu Flask, matplotlib, numpy, plot
 
 3. Otwórz przeglądarkę i przejdź pod adres http://localhost:8080\
 
-Projekt dostępny również na Replit: https://replit.com/@AleksanderWano1/Cruise-Control-basis-of-automation#main.py
+Projekt dostępny również na Replit: 
+https://replit.com/@AleksanderWano1/Cruise-Control-basis-of-automation#main.py
