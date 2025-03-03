@@ -22,4 +22,4 @@ https://replit.com/@AleksanderWano1/Cruise-Control-basis-of-automation#main.py
 
 # License
 
-This project is under the MIT License
+This project is under the MIT License - see the [LICENSE](./LICENSE) file for details.
