@@ -1,4 +1,4 @@
-# Cruise Control Simulation
+# Symulator Tempomatu z Regulatorem PID
 
 Projekt symulacji tempomatu wykonany przy użyciu Flask, matplotlib, numpy, plotly i kaleido. Aplikacja symuluje dynamikę pojazdu z wykorzystaniem regulatora PID, umożliwiając modyfikację takich parametrów jak:
 - prędkość początkowa,
